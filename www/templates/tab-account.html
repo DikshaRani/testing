@@ -1,0 +1,92 @@
+<ion-view view-title="Account">
+    <ion-content>
+
+
+        <div class="button-bar" style="padding-top:15%">
+            <a class="button button-calm" ng-click="showLogin()">Login</a>
+            <a class="button button-calm" ng-click="showRegister()">Register</a>
+        </div>
+
+        <!--aacount login-->
+
+        <div ng-show="login" view-title="login" style="padding-top:5%">
+            <div class="list">
+                <form name="myForm">
+                    <label class="item item-input item-floating-label">
+                        <input type="email" id="email" ng-model="data.username" name="username" placeholder="Username or Email" required>
+                        <span color="red" ng-show="myForm.username.$invalid && myForm.username.$dirty"></span>
+                    </label>
+
+                    <label class="item item-input item-floating-label">
+                        <input type="password" id="password" ng-model="data.password" name="password" placeholder="Password" required>
+                        <span color="red" ng-show="myForm.password.$invalid && myForm.password.$dirty"></span>
+                    </label>
+                    </label>
+                    <br>
+                    <button type="submit" class="button button-calm" style="margin-left:37%" id="login" ng-click="loginUser(data)">Login</button>
+                </form>
+            </div>
+        </div>
+
+
+        <!--account  register -->
+
+        <div ng-show="register" style="padding-top:5%">
+            <div>
+                <center>
+                    <img ng-src="{{imageURI}}" height="80px" width="80px" ng-click="show()" style="text-align: center">
+
+                </center>
+            </div>
+
+            <div class="list">
+                <form name="myForm" ng-submit="registerUser(data)">
+                    <label class="item item-input">
+                        <input type="email" id="email" ng-model="data.user" name="user" placeholder="Username">
+                        <span color="red" ng-show="myForm.user.$invalid && myForm.user.$dirty"></span>
+                    </label>
+
+                    <label class="item item-input">
+                        <input type="text" id="" ng-model="data.name" name="name" placeholder="Name">
+                        <span color="red" ng-show="myForm.name.$invalid && myForm.name.$dirty"></span>
+                    </label>
+
+                    <label class="item item-input">
+                        <input type="password" id="password" ng-model="data.password" name="password" placeholder="Password">
+                        <span class="input-label" color="red" ng-show="myForm.password.$invalid && myForm.password.$dirty"></span>
+                    </label>
+
+                    <label class="item item-input">
+                        <input type="number" id="" ng-model="data.age" name="age" placeholder="Age">
+                        <span class="input-label" color="red" ng-show="myForm.age.$invalid && myForm.age.$dirty"></span>
+                    </label>
+
+                    <label class="item item-input">
+                        <input type="number" id="" ng-model="data.mobile" name="mobile" placeholder="Mobile no.">
+                        <span class="input-label" color="red" ng-show="myForm.mobile.$invalid && myForm.mobile.$dirty"></span>
+                    </label>
+                    <table style="margin-left:20%">
+                        <tr>
+                            <td>
+                                <ion-radio ng-model="data.male" ng-value="'male'" name="male">Male</ion-radio>
+                                <span class="input-label" color="red" ng-show="myForm.male.$invalid && myForm.male.$dirty"></span>
+                            </td>
+
+                            <td>
+                                <ion-radio ng-model="data.female" ng-value="'female'" name="female">Female</ion-radio>
+                                <span class="input-label" color="red" ng-show="myForm.female.$invalid && myForm.female.$dirty"></span>
+                            </td>
+                        </tr>
+                    </table>
+                    <br>
+                    <button type="submit" class="button button-calm" style="margin-left:37%" id="registerButton">Register</button>
+                </form>
+            </div>
+        </div>
+
+
+      
+        </div>
+
+    </ion-content>
+</ion-view>

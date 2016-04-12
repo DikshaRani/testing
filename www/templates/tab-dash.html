@@ -1,0 +1,42 @@
+<ion-view view-title="Dashboard">
+  <ion-content class="padding">
+ 
+        <div class='list'>
+
+            <form name="myForm">
+
+                <h1 class='text-center' style="color:grey">Create List</h1>
+                <br>
+                <label class="item item-input">
+                     <span class="input-label">TodoDate</span>
+                    <input class='text' placeholder="name" ng-model="todo.TodoName" name="TodoName" autofocus>
+                    <span ng-show="myForm.TodoName.$invalid && myForm.TodoName.$dirty"></span>
+                </label>
+
+                <label class="item item-input">
+                     <span class="input-label">TodoTime</span>
+                    <input type="time" placeholder="time" ng-model="todo.TodoTime" name="TodoTime" autofocus>
+                    <span ng-show="myForm.TodoTime.$invalid && myForm.TodoTime.$dirty"></span>
+                </label>
+
+                <label class="item item-input">
+                     <span class="input-label">TodoPriority</span>
+                    <input type="number" class='form-control' placeholder="Priority" ng-model="todo.TodoPriority" name="TodoPriority" autofocus>
+                    <span ng-show="myForm.TodoPriority.$invalid && myForm.TodoPriority.$dirty"></span>
+                </label>
+
+                <label class="item item-input">
+                     <span class="input-label">TodoDate</span>
+                    <input type="date" placeholder="date" ng-model="todo.TodoDate" name="TodoDate" autofocus>
+                    <span ng-show="myForm.TodoDate.$invalid && myForm.TodoDate.$dirty"></span>
+               
+                
+        </div>
+        <br>
+
+        <button type="submit" class="button button-calm" style="margin-left:37%" ng-click="submitTodo(todo)">Create</button>
+        <br> 
+        
+</form>
+  </ion-content>
+</ion-view>
